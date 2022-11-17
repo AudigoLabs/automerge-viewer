@@ -1,1 +1,9 @@
+
+<hr/>
+<label>
+  Data:
+  <input (keydown.enter)="inputOnEnter($event)" style="width: 500px;"/>
+  <span style="margin-left: 8px">{{status}}</span>
+</label>
+<hr/>
 <ngx-json-viewer [json]="data"></ngx-json-viewer>
