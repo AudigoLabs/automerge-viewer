@@ -2,6 +2,15 @@
 
 This is a very basic Angular application that allows for visualization of [Automerge](automerge.org) types. To use it, simply enter a base64-encoded Automerge type into the input field.
 
+## Example
+
+Input:
+```
+hW9Kg7wCTk8A7gIBIMFrUhFllEk0n+q5D6/88Aqf/sPvh4FDgpWW2c4R0L02AaY3pzdjxkohWYZyJ5bfdjJ/m9h9lFWsJH3Du/Rv/58BCAECAwITAyMHNRFAA0MCVgIMAQQCBhVbIQIjDTQBQgZWEldB gAEFgQECgwECAgACAX4DCn6OvN+bBgB+DkluaXRpYWxpemF0aW9uAH4AAX8AAgcABQgAAAUEBAQJfwpjcmVhdGVEYXRlAghkdXJhdGlvbnYIZmlsZVR5cGUCaWQFZXBvY2gFZmxhZ3MJdGltZXNjYWxl BXZhbHVlBWVwb2NoBWZsYWdzCXRpbWVzY2FsZQV2YWx1ZQ0AegEDBXkBAgMBfwIDAQ1/AQIACgF/aQIAfKYBlgQUEwI0fhQTAjSd0+3hyDBTVEVSRU9fV0FWNzEwYmJhYTBlNDFjNTA1Ni0wODJmYThh NTM2NTczMGNjAAGA9wLa6RsAAYD3AtrpG34AAQsAfwB/CQE=
+```
+
+![Example](docs/example.png)
+
 ## Building
 
 To run this tool locally:
