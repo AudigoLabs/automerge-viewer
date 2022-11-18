@@ -1,27 +1,29 @@
-# AutomergeViewer
+# Automerge Viewer
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.3.
+This is a very basic Angular application that allows for visualization of [Automerge](automerge.org) types. To use it, simply enter a base64-encoded Automerge type into the input field.
 
-## Development server
+## Building
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+To run this tool locally:
+1. `npm install`
+2. `ng serve`
 
-## Code scaffolding
+## Current Functionality
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+For `Document` inputs, the current content will be displayed along with the entire set of changes and any conflicts on top-level keys.
 
-## Build
+For `SyncState` inputs, the decoded sync state will be displayed.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+For `SyncMessage` inputs, the decoded sync message will be displayed.
 
-## Running unit tests
+## Contributions and Future Functionality
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+This is something that was put together very quickly by a non-web developer to aid in our usage of Automerge, so is rough around the edges, and there are no immediate plans for enhancements.
 
-## Running end-to-end tests
+However, among other things, we would like to expand the document visualization. The list of changes is not very human-readable. Ideally, the tool could show document changes as a graph and allow viewing a diff for individual changes similar to what you would expect for graphical tools for git.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Any contributions or suggestions are welcome.
 
-## Further help
+## License
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+This tool is released under the MIT license. See LICENSE.txt for more information.
