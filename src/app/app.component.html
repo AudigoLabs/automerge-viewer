@@ -1,9 +1,25 @@
 
 <hr/>
 <label>
-  Data:
   <input (keydown.enter)="inputOnEnter($event)" style="width: 500px;"/>
   <span style="margin-left: 8px">{{status}}</span>
 </label>
 <hr/>
-<ngx-json-viewer [json]="data"></ngx-json-viewer>
+<div [hidden]="type != 'DOCUMENT'">
+  <h3>Content:</h3>
+  <ngx-json-viewer [json]="data.DOCUMENT?.content ?? {}"></ngx-json-viewer>
+  <hr/>
+  <h3>Changes:</h3>
+  <ngx-json-viewer [json]="data.DOCUMENT?.history ?? {}"></ngx-json-viewer>
+  <hr/>
+  <h3>Top-Level Conflicts:</h3>
+  <ngx-json-viewer [json]="data.DOCUMENT?.conflicts ?? {}"></ngx-json-viewer>
+</div>
+<div [hidden]="type != 'SYNC_STATE'">
+  <h3>Sync State:</h3>
+  <ngx-json-viewer [json]="data.SYNC_STATE ?? {}"></ngx-json-viewer>
+</div>
+<div [hidden]="type != 'SYNC_MESSAGE'">
+  <h3>Sync Message:</h3>
+  <ngx-json-viewer [json]="data.SYNC_MESSAGE ?? {}"></ngx-json-viewer>
+</div>
