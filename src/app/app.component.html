@@ -10,7 +10,7 @@
   <ngx-json-viewer [json]="data.DOCUMENT?.content ?? {}"></ngx-json-viewer>
   <hr/>
   <h3>Changes:</h3>
-  <ngx-json-viewer [json]="data.DOCUMENT?.history ?? {}"></ngx-json-viewer>
+  <ngx-json-viewer [json]="data.DOCUMENT?.changes ?? {}" [expanded]="false"></ngx-json-viewer>
   <hr/>
   <h3>Top-Level Conflicts:</h3>
   <ngx-json-viewer [json]="data.DOCUMENT?.conflicts ?? {}"></ngx-json-viewer>

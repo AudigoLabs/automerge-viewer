@@ -34,7 +34,7 @@ export class AppComponent {
     if (doc) {
       this.handleResult(Type.DOCUMENT, {
         content: doc,
-        history: Automerge.getAllChanges(doc).map(c => Automerge.decodeChange(c)),
+        changes: Automerge.getAllChanges(doc).map(c => Automerge.decodeChange(c)),
         conflicts: Object.keys(doc).reduce((acc, key) => ({...acc, [key]: Automerge.getConflicts(doc, key)}), {}),
       });
       return;
