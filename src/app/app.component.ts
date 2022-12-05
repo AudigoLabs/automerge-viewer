@@ -21,6 +21,8 @@ export class AppComponent {
   public docContent = {};
   public syncMessage = {};
   public syncState = {};
+  public diffOld = "";
+  public diffNew = "";
 
   public inputOnEnter(event: any) {
     if (event.code != 'Enter') {
@@ -28,10 +30,18 @@ export class AppComponent {
     }
     this.status = 'Processing...';
     this.type = Type.NONE;
+    this.diffOld = "";
+    this.diffNew = "";
     const value = Buffer.from(event.target.value, 'base64') as Uint8Array;
 
     const doc = this.decodeDocument(value);
     if (doc) {
+      const history = Automerge.getHistory(doc);
+      if (history.length > 1) {
+        const prevContent = history[history.length - 2].snapshot;
+        this.diffOld = JSON.stringify(prevContent, null, 2);
+        this.diffNew = JSON.stringify(doc, null, 2);
+      }
       this.handleResult(Type.DOCUMENT, {
         content: doc,
         changes: Automerge.getAllChanges(doc).map(c => Automerge.decodeChange(c)),

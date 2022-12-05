@@ -19,6 +19,8 @@
     "@angular/platform-browser-dynamic": "^14.2.10",
     "@angular/router": "^14.2.10",
     "automerge": "github:automerge/automerge",
+    "diff-match-patch-ts": "^0.2.0",
+    "ngx-diff": "^1.0.0",
     "ngx-json-viewer": "^3.2.1-alpha.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.1.0",
