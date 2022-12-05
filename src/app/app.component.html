@@ -13,6 +13,7 @@
   <hr/>
   <h3>Top-Level Conflicts:</h3>
   <ngx-json-viewer [json]="data.DOCUMENT?.conflicts ?? {}"></ngx-json-viewer>
+  <hr/>
   <h3>Most Recent Change Diff:</h3>
   <inline-diff [oldText]="diffOld" [newText]="diffNew" [lineContextSize]="2"></inline-diff>
 </div>
