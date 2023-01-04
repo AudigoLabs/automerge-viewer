@@ -52,7 +52,12 @@ export class AppComponent {
 
     const syncMessage = this.decodeSyncMessage(value);
     if (syncMessage) {
-      this.handleResult(Type.SYNC_MESSAGE, syncMessage);
+      this.handleResult(Type.SYNC_MESSAGE, {
+        have: syncMessage.have,
+        heads: syncMessage.heads,
+        need: syncMessage.need,
+        changes: syncMessage.changes.map(c => Automerge.decodeChange(c)),
+      });
       return;
     }
 
