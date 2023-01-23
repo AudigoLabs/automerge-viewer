@@ -14,8 +14,11 @@
   <h3>Top-Level Conflicts:</h3>
   <ngx-json-viewer [json]="data.DOCUMENT?.conflicts ?? {}"></ngx-json-viewer>
   <hr/>
-  <h3>Most Recent Change Diff:</h3>
-  <inline-diff [oldText]="diffOld" [newText]="diffNew" [lineContextSize]="2"></inline-diff>
+  <h3>Change Diffs:</h3>
+  <div *ngFor="let diff of diffs; let i = index">
+    <h4>Change {{i+1}} ({{diff.time}} - {{diff.actor}})</h4>
+    <inline-diff [oldText]="diff.old" [newText]="diff.new" [lineContextSize]="2"></inline-diff>
+  </div>
 </div>
 <div [hidden]="type != 'SYNC_STATE'">
   <h3>Sync State:</h3>
